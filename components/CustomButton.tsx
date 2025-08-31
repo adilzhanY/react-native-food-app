@@ -1,6 +1,6 @@
 import { CustomButtonProps } from '@/type';
 import cn from "clsx";
-import React from 'react';
+import React, { useState } from 'react';
 import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
 
 const CustomButton = ({
@@ -11,6 +11,7 @@ const CustomButton = ({
   leftIcon,
   isLoading = false
 }: CustomButtonProps) => {
+  const [count, setCount] = useState(1);
   return (
     <TouchableOpacity className={cn('custom-btn', style)} onPress={onPress}>
       {leftIcon}
